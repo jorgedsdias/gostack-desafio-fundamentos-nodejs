@@ -15,11 +15,9 @@ class CreateTransactionService {
   }
 
   public execute({ title, value, type }: Request): Transaction {
-    const balance = this.transactionsRepository.getBalance();
+    const { total } = this.transactionsRepository.getBalance();
 
-    const totalBalance = balance.total;
-
-    if (type === 'outcome' && value > totalBalance) {
+    if (type === 'outcome' && total < value) {
       throw Error('The outcome value is greater than the total balance');
     }
 
