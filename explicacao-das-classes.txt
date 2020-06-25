@@ -1,0 +1,4 @@
+/routes/index - Cria uma rota /transactions
+/routes/transactions.routes.ts - Responsabilidade de enviar as informações, ou para o TransactionsRepository ou para o CreateTransactionService
+/repositories/TransactionsRepository.ts - Funcões de manipulação banco de dados ( all, create, find, show, delete etc. )
+/services/CreateTransactionService.ts - Uma única função, a de criar uma transaction no Banco de dados, utilizando o TransactionsRepository
